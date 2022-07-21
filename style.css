@@ -67,7 +67,7 @@ section{
 header{
   position: fixed;
   top:0; left: 0; right:0;
-  background:rgb(34, 133, 63);
+  background:#212121;
   z-index: 1000;
   display: flex;
   align-items: center;
@@ -555,7 +555,7 @@ header .search-bar-container label:hover{
 }
 
 .footer{
-  background:rgb(34, 133, 63);
+  background:#212121;
 }
 
 .footer .box-container{
@@ -565,7 +565,7 @@ header .search-bar-container label:hover{
 }
 
 .footer .box-container .box{
-  padding:1rem 0;
+  padding:.7rem 0;
   flex:1 1 25rem;
 }
 
@@ -579,14 +579,30 @@ header .search-bar-container label:hover{
   font-size: 1.5rem;
   padding:.7rem 0;
   color:#eee;
+  
 }
 
-.footer .box-container .stickyicon-list a{
+
+.footer .box-container .box a{
   display: block;
-  /* font-size: 1.5rem;
-  padding:.7rem 0; */
+  font-size: 1.5rem;
+  padding:.7rem 0;
   color:#eee;
   
+  
+}
+
+.footer-copyright{
+  background: black;
+  text-align: center;
+  display: block;
+  font-size: 1.5rem;
+  padding:.8rem 0;
+  color:#eee;
+
+}
+
+.footer-copyright p{
   
 }
 
@@ -594,12 +610,14 @@ header .search-bar-container label:hover{
   margin-top: 30px; 
   position:fixed;   
   top: 200px; 
+  right: 10px;
   transform: translateY(-50%); 
   
   }         
   .stickyicon-list a {   
   display: block;   
-  text-align: center;   
+  text-align: center
+  ;   
   padding: 8px;   
   transition: all 0.5s ease;   
   color: white;   
