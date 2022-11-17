@@ -65,28 +65,24 @@ img{
       </div>
 
       <form method="POST" name="google-sheet" >
-          <div class="inputBox">
-              <h3>Name</h3>
-              <input type="text" name="Name"placeholder="Enter your name">
-          </div>
-          <div class="inputBox">
-              <h3>Contact no</h3>
-              <input type="number" name="Contact no" placeholder="Contact number">
-          </div>
-          <div class="inputBox">
-              <h3>arrivals</h3>
-              <input type="date"   name="Arrival">
-          </div>
-          <div class="inputBox">
-              <h3>leaving</h3>
-              <input type="date" name="Leaving">
-          </div>
-          <div class="inputBox">
-            <h3>Passengers</h3>
-            <input type="number" name="Passengers" placeholder="Number of passengers">
+        <div class="inputBox">
+            <h3>Name</h3>
+            <input type="text" name="Name"placeholder="Enter your name">
         </div>
-          <input type="submit" class="btn" name="submit" value="Submit">
-      </form>
+        <div class="inputBox">
+            <h3>Where to</h3>
+            <input type="text" name="Where to" placeholder="Place name">
+        </div>
+        <div class="inputBox">
+            <h3>Contact</h3>
+            <input type="number"   name="Contact">
+        </div>
+        <div class="inputBox">
+            <h3>Arrival</h3>
+            <input type="date" name="Arrival">
+        </div>
+        <input type="submit" class="btn" name="submit" value="Submit">
+    </form>
 
   </div>
 
@@ -123,5 +119,17 @@ img{
 <div class="footer-copyright">
   <p>Copyright © 2022 EazeeTrip, All rights reserved.</p>
 </div>
+
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycby623Lg5j2vPmAwtlMQS_fUKnifyaoFuiSVRTSU9-0fSqqEsfWRXT3jxoscWIG2gAHDGw/exec'
+  const form = document.forms['google-sheet']
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+      .catch(error => console.error('Error!', error.message))
+  })
+</script>
 </body>
 </html>
